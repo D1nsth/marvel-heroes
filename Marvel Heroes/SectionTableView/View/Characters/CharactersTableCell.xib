@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CharactersTableCell" rowHeight="121" id="LPn-xs-qRU" customClass="CharactersTableCell" customModule="Marvel_Heroes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="452" height="121"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LPn-xs-qRU" id="OUz-UI-Fer">
+                <rect key="frame" x="0.0" y="0.0" width="452" height="121"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dP9-iv-Srv">
+                        <rect key="frame" x="20" y="15" width="412" height="51"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hq-Ek-GuH">
+                        <rect key="frame" x="20" y="71" width="412" height="35"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dP9-iv-Srv" firstAttribute="leading" secondItem="OUz-UI-Fer" secondAttribute="leading" constant="20" id="MEW-Oh-eLU"/>
+                    <constraint firstAttribute="trailing" secondItem="dP9-iv-Srv" secondAttribute="trailing" constant="20" id="UT5-X2-P9I"/>
+                    <constraint firstAttribute="trailing" secondItem="5hq-Ek-GuH" secondAttribute="trailing" constant="20" id="VH2-MI-DXA"/>
+                    <constraint firstAttribute="bottom" secondItem="5hq-Ek-GuH" secondAttribute="bottom" constant="15" id="cXY-JB-N9Q"/>
+                    <constraint firstItem="dP9-iv-Srv" firstAttribute="top" secondItem="OUz-UI-Fer" secondAttribute="top" constant="15" id="dDD-y0-Z5r"/>
+                    <constraint firstItem="5hq-Ek-GuH" firstAttribute="top" secondItem="dP9-iv-Srv" secondAttribute="bottom" constant="5" id="dE1-rE-FFc"/>
+                    <constraint firstItem="5hq-Ek-GuH" firstAttribute="leading" secondItem="OUz-UI-Fer" secondAttribute="leading" constant="20" id="gmZ-hK-Dkj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="5hq-Ek-GuH" id="mfB-m6-Pf6"/>
+                <outlet property="nameLabel" destination="dP9-iv-Srv" id="lgD-Y7-97X"/>
+            </connections>
+            <point key="canvasLocation" x="69.565217391304358" y="121.54017857142857"/>
+        </tableViewCell>
+    </objects>
+</document>
