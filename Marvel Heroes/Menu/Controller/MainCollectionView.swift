@@ -14,7 +14,11 @@ class MainCollectionView: UIViewController {
     
     // разделы в меню
     private let data: [Section] = [Section(.CHARACTERS, mainImageName: "\(NameSections.CHARACTERS.getString()).png"),
-                           Section(.COMICS, mainImageName: "\(NameSections.COMICS.getString()).png")]
+                           Section(.COMICS, mainImageName: "\(NameSections.COMICS.getString()).png"),
+                           Section(.CREATORS, mainImageName: "\(NameSections.CREATORS.getString()).png"),
+                           Section(.EVENTS, mainImageName: "\(NameSections.EVENTS.getString())"),
+                           Section(.SERIES, mainImageName: "\(NameSections.SERIES.getString()).png"),
+                           Section(.STORIES, mainImageName: "\(NameSections.STORIES.getString()).png")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

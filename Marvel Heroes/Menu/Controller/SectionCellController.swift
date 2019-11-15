@@ -134,7 +134,27 @@ extension SectionCell: UITableViewDataSource {
             cell?.configure(comics: dataArray![indexPath.row] as! Comics)
             return cell!
             
+        case .CREATORS:
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CreatorsTableCell
+            cell?.configure(creator: dataArray![indexPath.row] as! Creator)
+            return cell!
+            
+        case .EVENTS:
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? EventsTableCell
+            cell?.configure(event: dataArray![indexPath.row] as! Event)
+            return cell!
+            
+        case .SERIES:
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? SeriesTableCell
+            cell?.configure(series: dataArray![indexPath.row] as! Series)
+            return cell!
+            
+        case .STORIES:
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? StoriesTableCell
+            cell?.configure(story: dataArray![indexPath.row] as! Story)
+            return cell!
         }
+        
     }
     
 }

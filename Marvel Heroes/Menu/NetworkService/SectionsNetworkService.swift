@@ -37,7 +37,6 @@ class SectionsNetworkService {
         let privateKey = Bundle.main.infoDictionary?["Private key"] ?? ""
         let section = nameSection.getString().lowercased()
         
-        // MARK: - private key КАК СКРЫТЬ?
         let md5Data = MD5(string:"\(ts)\(privateKey)\(publicKey)")
         let hash =  md5Data.map { String(format: "%02hhx", $0) }.joined()
         

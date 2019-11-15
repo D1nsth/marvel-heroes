@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoriesTableCell" rowHeight="123" id="zPt-zq-m55" customClass="StoriesTableCell" customModule="Marvel_Heroes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="123"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zPt-zq-m55" id="864-PM-ZnH">
+                <rect key="frame" x="0.0" y="0.0" width="450" height="123"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-gG-RgE">
+                        <rect key="frame" x="20" y="15" width="410" height="26"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSl-1J-6tq">
+                        <rect key="frame" x="20" y="51" width="410" height="23"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYn-5a-Zul">
+                        <rect key="frame" x="20" y="84" width="410" height="24"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RSl-1J-6tq" firstAttribute="leading" secondItem="864-PM-ZnH" secondAttribute="leading" constant="20" id="5xM-bZ-Vlv"/>
+                    <constraint firstItem="MYn-5a-Zul" firstAttribute="leading" secondItem="864-PM-ZnH" secondAttribute="leading" constant="20" id="Dij-g7-XfR"/>
+                    <constraint firstAttribute="trailing" secondItem="MYn-5a-Zul" secondAttribute="trailing" constant="20" id="DzI-Ri-XYI"/>
+                    <constraint firstItem="MYn-5a-Zul" firstAttribute="top" secondItem="RSl-1J-6tq" secondAttribute="bottom" constant="10" id="Rfp-LM-070"/>
+                    <constraint firstAttribute="trailing" secondItem="dFu-gG-RgE" secondAttribute="trailing" constant="20" id="UFY-mJ-7j9"/>
+                    <constraint firstItem="dFu-gG-RgE" firstAttribute="top" secondItem="864-PM-ZnH" secondAttribute="top" constant="15" id="fJu-sU-cKK"/>
+                    <constraint firstAttribute="trailing" secondItem="RSl-1J-6tq" secondAttribute="trailing" constant="20" id="hBb-nR-iOs"/>
+                    <constraint firstAttribute="bottom" secondItem="MYn-5a-Zul" secondAttribute="bottom" constant="15" id="mPC-Kj-cjY"/>
+                    <constraint firstItem="dFu-gG-RgE" firstAttribute="leading" secondItem="864-PM-ZnH" secondAttribute="leading" constant="20" id="nMt-dc-3cD"/>
+                    <constraint firstItem="RSl-1J-6tq" firstAttribute="top" secondItem="dFu-gG-RgE" secondAttribute="bottom" constant="10" id="wOI-VD-hgX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="RSl-1J-6tq" id="35R-Kc-qRJ"/>
+                <outlet property="titleLabel" destination="dFu-gG-RgE" id="e9X-Xk-6Sm"/>
+                <outlet property="typeLabel" destination="MYn-5a-Zul" id="QfT-P8-rXK"/>
+            </connections>
+            <point key="canvasLocation" x="57.971014492753625" y="85.379464285714278"/>
+        </tableViewCell>
+    </objects>
+</document>

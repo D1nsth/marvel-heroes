@@ -18,14 +18,7 @@ struct GetSectionResponse {
         guard let dataJSON = json["data"] as? JSON else { throw NetworkError.failParseJSON }
         guard let resultsJSON = dataJSON["results"] as? [JSON] else { throw NetworkError.failParseJSON }
         
-        var resultsArray: [Any]
-        
-        switch nameSection {
-        case .CHARACTERS:
-            resultsArray = [Character]() as [AnyObject]
-        case .COMICS:
-            resultsArray = [Comics]() as [AnyObject]
-        }
+        var resultsArray = [Any]()
         
         // заполняем resultArray
         for dictionary in resultsJSON {
@@ -38,7 +31,24 @@ struct GetSectionResponse {
                 guard let comics = Comics(dist: dictionary) else { continue }
                 resultsArray.append(comics)
                 
+            case .CREATORS:
+                guard let creator = Creator(dist: dictionary) else { continue }
+                resultsArray.append(creator)
+             
+            case .EVENTS:
+                guard let event = Event(dist: dictionary) else { continue }
+                resultsArray.append(event)
+                
+            case .SERIES:
+                guard let series = Series(dist: dictionary) else { continue }
+                resultsArray.append(series)
+                
+            case .STORIES:
+                guard let stories = Story(dist: dictionary) else { continue }
+                resultsArray.append(stories)
+                
             }
+            
         }
         
         self.resultsArray = resultsArray as [AnyObject]
