@@ -15,6 +15,7 @@ class SectionCell: UICollectionViewCell {
     
     var index: Int?
     
+    let heightCellCalculator = HeightCellCalculator()
     let cornerRadius: CGFloat = 10
     
     var heightAnchorConstraint: NSLayoutConstraint!
@@ -27,11 +28,14 @@ class SectionCell: UICollectionViewCell {
         return UIViewPropertyAnimator(duration: 0.3, curve: .easeInOut)
     }()
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var previewLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var sectionTableView: SectionTableView!
+    @IBOutlet weak var sectionTableView: UITableView!
+    
+    lazy var footerView = FooterView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 45))
     
     // MARK: - awakeFromNib
     override func awakeFromNib() {
@@ -74,8 +78,24 @@ class SectionCell: UICollectionViewCell {
     // настраиваем table view
     private func setupTableView() {
         let usedCellName = "\(nameSection.getString())TableCell"
-        let nib = UINib(nibName: usedCellName, bundle: nil)
-        sectionTableView.register(nib, forCellReuseIdentifier: usedCellName)
+        var usedClass: AnyClass
+        
+        switch nameSection! {
+        case .CHARACTERS:
+            usedClass = CharactersTableCell.self
+        case .COMICS:
+            usedClass = ComicsTableCell.self
+        case .CREATORS:
+            usedClass = CreatorsTableCell.self
+        case .EVENTS:
+            usedClass = EventsTableCell.self
+        case .SERIES:
+            usedClass = SeriesTableCell.self
+        case .STORIES:
+            usedClass = StoriesTableCell.self
+        }
+        
+        sectionTableView.register(usedClass, forCellReuseIdentifier: usedCellName)
         
         sectionTableView.delegate = self
         sectionTableView.dataSource = self
@@ -86,6 +106,8 @@ class SectionCell: UICollectionViewCell {
         sectionTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         sectionTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         sectionTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+        sectionTableView.tableFooterView = footerView
     }
     
     // close button action

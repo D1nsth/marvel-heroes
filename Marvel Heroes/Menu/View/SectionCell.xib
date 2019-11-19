@@ -23,6 +23,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mdw-ca-mVB">
                                 <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="sFn-9m-roU">
+                                <rect key="frame" x="156" y="81" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EW2-3k-5mG">
                                 <rect key="frame" x="10" y="169" width="48.5" height="21"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
@@ -46,7 +50,9 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Mdw-ca-mVB" secondAttribute="trailing" id="80n-dM-jaf"/>
                             <constraint firstItem="Mdw-ca-mVB" firstAttribute="leading" secondItem="zn9-1u-d8y" secondAttribute="leading" id="Ell-sw-l1H"/>
+                            <constraint firstItem="sFn-9m-roU" firstAttribute="centerX" secondItem="zn9-1u-d8y" secondAttribute="centerX" id="Kfl-rS-UMv"/>
                             <constraint firstAttribute="trailing" secondItem="eaH-Ei-lV9" secondAttribute="trailing" constant="15" id="PdO-3B-ysM"/>
+                            <constraint firstItem="sFn-9m-roU" firstAttribute="centerY" secondItem="zn9-1u-d8y" secondAttribute="centerY" id="TFd-1y-Co2"/>
                             <constraint firstAttribute="bottom" secondItem="Mdw-ca-mVB" secondAttribute="bottom" id="VtF-0Y-IBQ"/>
                             <constraint firstItem="eaH-Ei-lV9" firstAttribute="top" secondItem="zn9-1u-d8y" secondAttribute="top" constant="15" id="WZO-wy-DUa"/>
                             <constraint firstItem="EW2-3k-5mG" firstAttribute="leading" secondItem="zn9-1u-d8y" secondAttribute="leading" constant="10" id="gr2-3s-TBH"/>
@@ -63,6 +69,7 @@
             </collectionViewCellContentView>
             <size key="customSize" width="236" height="83"/>
             <connections>
+                <outlet property="activityIndicator" destination="sFn-9m-roU" id="G3f-nL-ZqQ"/>
                 <outlet property="closeButton" destination="eaH-Ei-lV9" id="HgM-OW-T8A"/>
                 <outlet property="previewImage" destination="Mdw-ca-mVB" id="kkh-HA-ucZ"/>
                 <outlet property="previewLabel" destination="EW2-3k-5mG" id="hBn-Wg-rUn"/>

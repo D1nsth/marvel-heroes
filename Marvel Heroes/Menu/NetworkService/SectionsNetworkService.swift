@@ -30,7 +30,7 @@ class SectionsNetworkService {
         return digestData
     }
     
-    static func getSectionData(_ nameSection: NameSections, completion: @escaping(GetSectionResponse) -> ()) {
+    static func getSectionData(_ nameSection: NameSections, startIndex: Int, completion: @escaping(GetSectionResponse) -> ()) {
         // параметры запроса
         let ts = 1
         let publicKey = Bundle.main.infoDictionary?["Public key"] ?? ""
@@ -40,7 +40,8 @@ class SectionsNetworkService {
         let md5Data = MD5(string:"\(ts)\(privateKey)\(publicKey)")
         let hash =  md5Data.map { String(format: "%02hhx", $0) }.joined()
         
-        guard let url = URL(string: "http://gateway.marvel.com/v1/public/\(section)?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)") else { return }
+        let stringUrl = "http://gateway.marvel.com/v1/public/\(section)?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)&offset=\(startIndex)"
+        guard let url = URL(string: stringUrl) else { return }
         
         NetworkService.shared.getData(url: url) { (json) in
             do {

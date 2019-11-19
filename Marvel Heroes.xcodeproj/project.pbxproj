@@ -16,8 +16,10 @@
 		DF6680D8237CA40600EBB80C /* SectionsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6680D7237CA40600EBB80C /* SectionsNetworkService.swift */; };
 		DF6680DC237CB80B00EBB80C /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6680DB237CB80B00EBB80C /* Comics.swift */; };
 		DF6680DE237CB9C600EBB80C /* SectionCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6680DD237CB9C600EBB80C /* SectionCellController.swift */; };
-		DF6680E1237CECFF00EBB80C /* CharactersTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF6680E0237CECFF00EBB80C /* CharactersTableCell.xib */; };
 		DF6680E3237CEE9700EBB80C /* CharactersTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6680E2237CEE9700EBB80C /* CharactersTableCell.swift */; };
+		DF736D202383DB6F00A9502C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF736D1F2383DB6F00A9502C /* Constants.swift */; };
+		DF736D222383DC9E00A9502C /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF736D212383DC9E00A9502C /* Constraints.swift */; };
+		DF736D252383E03300A9502C /* String + Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF736D242383E03300A9502C /* String + Height.swift */; };
 		DF8C487023793FFB00DF3CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C486F23793FFB00DF3CE8 /* AppDelegate.swift */; };
 		DF8C487223793FFB00DF3CE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C487123793FFB00DF3CE8 /* SceneDelegate.swift */; };
 		DF8C487723793FFB00DF3CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8C487523793FFB00DF3CE8 /* Main.storyboard */; };
@@ -28,20 +30,17 @@
 		DF8C489323794BAE00DF3CE8 /* SectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF8C489223794BAE00DF3CE8 /* SectionCell.xib */; };
 		DF8C489523794C6600DF3CE8 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C489423794C6600DF3CE8 /* SectionCell.swift */; };
 		DF8C4897237952E000DF3CE8 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C4896237952E000DF3CE8 /* Section.swift */; };
-		DFBE381D237CEFD200D8BD9A /* ComicsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFBE381C237CEFD200D8BD9A /* ComicsTableCell.xib */; };
+		DF9BBC54237FCB3B002CC293 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9BBC53237FCB3B002CC293 /* FooterView.swift */; };
+		DFA16A6E23848FED0060F207 /* HeightCellCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA16A6D23848FED0060F207 /* HeightCellCalculator.swift */; };
 		DFBE381F237CF06800D8BD9A /* ComicsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBE381E237CF06800D8BD9A /* ComicsTableCell.swift */; };
 		DFBE3821237CF50900D8BD9A /* NameSectionsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBE3820237CF50900D8BD9A /* NameSectionsEnum.swift */; };
 		DFEABF64237EA49400AB3012 /* Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABF63237EA49400AB3012 /* Creator.swift */; };
-		DFEABF67237EA73500AB3012 /* CreatorsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFEABF66237EA73500AB3012 /* CreatorsTableCell.xib */; };
 		DFEABF69237EA74F00AB3012 /* CreatorsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABF68237EA74F00AB3012 /* CreatorsTableCell.swift */; };
 		DFEABF6B237EAF6F00AB3012 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABF6A237EAF6F00AB3012 /* Event.swift */; };
-		DFEABF6E237EB14000AB3012 /* EventsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFEABF6D237EB14000AB3012 /* EventsTableCell.xib */; };
 		DFEABF70237EB14900AB3012 /* EventsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABF6F237EB14900AB3012 /* EventsTableCell.swift */; };
 		DFEABF72237EB6A300AB3012 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABF71237EB6A300AB3012 /* Series.swift */; };
-		DFEABF75237EB7BA00AB3012 /* SeriesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFEABF74237EB7BA00AB3012 /* SeriesTableCell.xib */; };
 		DFEABF77237EB7C200AB3012 /* SeriesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABF76237EB7C200AB3012 /* SeriesTableCell.swift */; };
 		DFEABF79237EBC8400AB3012 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABF78237EBC8400AB3012 /* Story.swift */; };
-		DFEABF7C237EC04000AB3012 /* StoriesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFEABF7B237EC04000AB3012 /* StoriesTableCell.xib */; };
 		DFEABF7E237EC04D00AB3012 /* StoriesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEABF7D237EC04D00AB3012 /* StoriesTableCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +55,10 @@
 		DF6680D7237CA40600EBB80C /* SectionsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsNetworkService.swift; sourceTree = "<group>"; };
 		DF6680DB237CB80B00EBB80C /* Comics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
 		DF6680DD237CB9C600EBB80C /* SectionCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCellController.swift; sourceTree = "<group>"; };
-		DF6680E0237CECFF00EBB80C /* CharactersTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersTableCell.xib; sourceTree = "<group>"; };
 		DF6680E2237CEE9700EBB80C /* CharactersTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableCell.swift; sourceTree = "<group>"; };
+		DF736D1F2383DB6F00A9502C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DF736D212383DC9E00A9502C /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		DF736D242383E03300A9502C /* String + Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Height.swift"; sourceTree = "<group>"; };
 		DF8C486C23793FFB00DF3CE8 /* Marvel Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Heroes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8C486F23793FFB00DF3CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF8C487123793FFB00DF3CE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,20 +71,17 @@
 		DF8C489223794BAE00DF3CE8 /* SectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionCell.xib; sourceTree = "<group>"; };
 		DF8C489423794C6600DF3CE8 /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
 		DF8C4896237952E000DF3CE8 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
-		DFBE381C237CEFD200D8BD9A /* ComicsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComicsTableCell.xib; sourceTree = "<group>"; };
+		DF9BBC53237FCB3B002CC293 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		DFA16A6D23848FED0060F207 /* HeightCellCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightCellCalculator.swift; sourceTree = "<group>"; };
 		DFBE381E237CF06800D8BD9A /* ComicsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTableCell.swift; sourceTree = "<group>"; };
 		DFBE3820237CF50900D8BD9A /* NameSectionsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSectionsEnum.swift; sourceTree = "<group>"; };
 		DFEABF63237EA49400AB3012 /* Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creator.swift; sourceTree = "<group>"; };
-		DFEABF66237EA73500AB3012 /* CreatorsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatorsTableCell.xib; sourceTree = "<group>"; };
 		DFEABF68237EA74F00AB3012 /* CreatorsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorsTableCell.swift; sourceTree = "<group>"; };
 		DFEABF6A237EAF6F00AB3012 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		DFEABF6D237EB14000AB3012 /* EventsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsTableCell.xib; sourceTree = "<group>"; };
 		DFEABF6F237EB14900AB3012 /* EventsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableCell.swift; sourceTree = "<group>"; };
 		DFEABF71237EB6A300AB3012 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
-		DFEABF74237EB7BA00AB3012 /* SeriesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesTableCell.xib; sourceTree = "<group>"; };
 		DFEABF76237EB7C200AB3012 /* SeriesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTableCell.swift; sourceTree = "<group>"; };
 		DFEABF78237EBC8400AB3012 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
-		DFEABF7B237EC04000AB3012 /* StoriesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesTableCell.xib; sourceTree = "<group>"; };
 		DFEABF7D237EC04D00AB3012 /* StoriesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,13 +107,10 @@
 		DF247ED0237A9F4500BE3E91 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DF6680DF237CECDF00EBB80C /* Characters */,
-				DFBE381B237CEFA100D8BD9A /* Comics */,
-				DFEABF65237EA71E00AB3012 /* Creators */,
-				DFEABF6C237EB12900AB3012 /* Events */,
-				DFEABF73237EB7A600AB3012 /* Series */,
-				DFEABF7A237EBE0800AB3012 /* Stories */,
+				DFA16A6F23849CEF0060F207 /* Cells */,
+				DF736D1F2383DB6F00A9502C /* Constants.swift */,
 				DF247ED4237AA22400BE3E91 /* SectionTableView.swift */,
+				DF9BBC53237FCB3B002CC293 /* FooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,13 +160,13 @@
 			path = Sections;
 			sourceTree = "<group>";
 		};
-		DF6680DF237CECDF00EBB80C /* Characters */ = {
+		DF736D232383DCBF00A9502C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DF6680E0237CECFF00EBB80C /* CharactersTableCell.xib */,
-				DF6680E2237CEE9700EBB80C /* CharactersTableCell.swift */,
+				DF736D212383DC9E00A9502C /* Constraints.swift */,
+				DF736D242383E03300A9502C /* String + Height.swift */,
 			);
-			path = Characters;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		DF8C486323793FFB00DF3CE8 = {
@@ -200,6 +195,7 @@
 				DF8C488023793FFE00DF3CE8 /* Info.plist */,
 				DF8C487823793FFB00DF3CE8 /* Marvel_Heroes.xcdatamodeld */,
 				DF1149B5237D6B5100B4E135 /* Debug.xcconfig */,
+				DF736D232383DCBF00A9502C /* Helpers */,
 			);
 			path = "Marvel Heroes";
 			sourceTree = "<group>";
@@ -249,6 +245,7 @@
 			children = (
 				DF8C488F2379424300DF3CE8 /* MainCollectionView.swift */,
 				DF6680DD237CB9C600EBB80C /* SectionCellController.swift */,
+				DFA16A6D23848FED0060F207 /* HeightCellCalculator.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,49 +271,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DFBE381B237CEFA100D8BD9A /* Comics */ = {
+		DFA16A6F23849CEF0060F207 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				DFBE381C237CEFD200D8BD9A /* ComicsTableCell.xib */,
+				DF6680E2237CEE9700EBB80C /* CharactersTableCell.swift */,
 				DFBE381E237CF06800D8BD9A /* ComicsTableCell.swift */,
-			);
-			path = Comics;
-			sourceTree = "<group>";
-		};
-		DFEABF65237EA71E00AB3012 /* Creators */ = {
-			isa = PBXGroup;
-			children = (
-				DFEABF66237EA73500AB3012 /* CreatorsTableCell.xib */,
 				DFEABF68237EA74F00AB3012 /* CreatorsTableCell.swift */,
-			);
-			path = Creators;
-			sourceTree = "<group>";
-		};
-		DFEABF6C237EB12900AB3012 /* Events */ = {
-			isa = PBXGroup;
-			children = (
-				DFEABF6D237EB14000AB3012 /* EventsTableCell.xib */,
 				DFEABF6F237EB14900AB3012 /* EventsTableCell.swift */,
-			);
-			path = Events;
-			sourceTree = "<group>";
-		};
-		DFEABF73237EB7A600AB3012 /* Series */ = {
-			isa = PBXGroup;
-			children = (
-				DFEABF74237EB7BA00AB3012 /* SeriesTableCell.xib */,
 				DFEABF76237EB7C200AB3012 /* SeriesTableCell.swift */,
-			);
-			path = Series;
-			sourceTree = "<group>";
-		};
-		DFEABF7A237EBE0800AB3012 /* Stories */ = {
-			isa = PBXGroup;
-			children = (
-				DFEABF7B237EC04000AB3012 /* StoriesTableCell.xib */,
 				DFEABF7D237EC04D00AB3012 /* StoriesTableCell.swift */,
 			);
-			path = Stories;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,15 +343,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF8C487F23793FFE00DF3CE8 /* LaunchScreen.storyboard in Resources */,
-				DFEABF6E237EB14000AB3012 /* EventsTableCell.xib in Resources */,
-				DFEABF7C237EC04000AB3012 /* StoriesTableCell.xib in Resources */,
 				DF8C489323794BAE00DF3CE8 /* SectionCell.xib in Resources */,
-				DFEABF75237EB7BA00AB3012 /* SeriesTableCell.xib in Resources */,
-				DFEABF67237EA73500AB3012 /* CreatorsTableCell.xib in Resources */,
 				DF8C487C23793FFE00DF3CE8 /* Assets.xcassets in Resources */,
-				DF6680E1237CECFF00EBB80C /* CharactersTableCell.xib in Resources */,
 				DF8C487723793FFB00DF3CE8 /* Main.storyboard in Resources */,
-				DFBE381D237CEFD200D8BD9A /* ComicsTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,14 +359,18 @@
 				DF6680CD237CA02C00EBB80C /* NetworkService.swift in Sources */,
 				DFEABF69237EA74F00AB3012 /* CreatorsTableCell.swift in Sources */,
 				DF8C487023793FFB00DF3CE8 /* AppDelegate.swift in Sources */,
+				DF9BBC54237FCB3B002CC293 /* FooterView.swift in Sources */,
 				DF247ED5237AA22400BE3E91 /* SectionTableView.swift in Sources */,
 				DFEABF7E237EC04D00AB3012 /* StoriesTableCell.swift in Sources */,
 				DF8C487A23793FFB00DF3CE8 /* Marvel_Heroes.xcdatamodeld in Sources */,
 				DF8C487223793FFB00DF3CE8 /* SceneDelegate.swift in Sources */,
 				DF6680DC237CB80B00EBB80C /* Comics.swift in Sources */,
 				DFEABF70237EB14900AB3012 /* EventsTableCell.swift in Sources */,
+				DFA16A6E23848FED0060F207 /* HeightCellCalculator.swift in Sources */,
 				DFBE3821237CF50900D8BD9A /* NameSectionsEnum.swift in Sources */,
+				DF736D202383DB6F00A9502C /* Constants.swift in Sources */,
 				DFEABF79237EBC8400AB3012 /* Story.swift in Sources */,
+				DF736D252383E03300A9502C /* String + Height.swift in Sources */,
 				DF8C4897237952E000DF3CE8 /* Section.swift in Sources */,
 				DF6680D2237CA22200EBB80C /* Character.swift in Sources */,
 				DF8C489523794C6600DF3CE8 /* SectionCell.swift in Sources */,
@@ -416,6 +379,7 @@
 				DF6680D8237CA40600EBB80C /* SectionsNetworkService.swift in Sources */,
 				DF6680D5237CA34300EBB80C /* NetworkError.swift in Sources */,
 				DFBE381F237CF06800D8BD9A /* ComicsTableCell.swift in Sources */,
+				DF736D222383DC9E00A9502C /* Constraints.swift in Sources */,
 				DF6680D0237CA0E200EBB80C /* GetSectionResponse.swift in Sources */,
 				DFEABF64237EA49400AB3012 /* Creator.swift in Sources */,
 				DFEABF77237EB7C200AB3012 /* SeriesTableCell.swift in Sources */,

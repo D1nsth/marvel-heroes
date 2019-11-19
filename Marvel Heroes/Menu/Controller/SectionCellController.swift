@@ -51,11 +51,7 @@ extension SectionCell {
         animator.addCompletion { (position) in
             switch position {
             case .end:
-                // подгружаем данные с сайта
-                SectionsNetworkService.getSectionData(self.nameSection) { (response) in
-                    self.dataArray = response.resultsArray as [AnyObject]
-                    self.sectionTableView.reloadData()
-                }
+                self.sectionTableView.alpha = 1
                 
                 self.state = self.state.change
                 collectionView.isScrollEnabled = false
@@ -65,7 +61,18 @@ extension SectionCell {
             }
         }
         
-        animator.startAnimation()
+        activityIndicator.startAnimating()
+        
+        // подгружаем данные с сайта
+        SectionsNetworkService.getSectionData(self.nameSection, startIndex: 0) { (response) in
+            self.dataArray = response.resultsArray as [AnyObject]
+            self.sectionTableView.reloadData()
+            self.footerView.setTitle("\(self.dataArray?.count ?? 0) записей")
+            
+            self.activityIndicator.stopAnimating()
+            self.animator.startAnimation()
+        }
+        
     }
     
     func expanded() {
@@ -74,7 +81,6 @@ extension SectionCell {
         animator.addAnimations {
             self.layer.cornerRadius = self.cornerRadius
             self.closeButton.alpha = 0
-            self.sectionTableView.alpha = 0
             
             self.heightAnchorConstraint.constant = 200
             
@@ -96,8 +102,10 @@ extension SectionCell {
         animator.addCompletion { (position) in
             switch position {
             case .end:
+                self.sectionTableView.alpha = 0
                 self.dataArray = []
                 self.sectionTableView.reloadData()
+                self.footerView.setTitle("0 записей")
                 
                 self.state = self.state.change
                 collectionView.isScrollEnabled = true
@@ -112,9 +120,9 @@ extension SectionCell {
     
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource, UITableViewDelegate
 
-extension SectionCell: UITableViewDataSource {
+extension SectionCell: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray?.count ?? 0
@@ -157,10 +165,33 @@ extension SectionCell: UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return heightCellCalculator.totalHeightCell(with: dataArray![indexPath.row], nameSection: nameSection!)
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return heightCellCalculator.totalHeightCell(with: dataArray![indexPath.row], nameSection: nameSection!)
+    }
+    
+    // MARK: - Scroll View Did End Dragging
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        if scrollView.contentOffset.y > (scrollView.contentSize.height - 400) {
+            footerView.showLoader()
+            
+            SectionsNetworkService.getSectionData(nameSection!, startIndex: dataArray!.count) { (response) in
+                for obj in response.resultsArray as [AnyObject] {
+                    self.dataArray?.append(obj)
+                }
+                
+                self.sectionTableView.reloadData()
+                self.footerView.setTitle("\(self.dataArray?.count ?? 0) записей")
+            }
+        }
+        
+    }
+    
 }
-
-// MARK: - UITableViewDelegate
-
-extension SectionCell: UITableViewDelegate {
-}
-
