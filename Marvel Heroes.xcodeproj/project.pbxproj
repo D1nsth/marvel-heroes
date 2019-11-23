@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF247ED5237AA22400BE3E91 /* SectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF247ED4237AA22400BE3E91 /* SectionTableView.swift */; };
 		DF52F2E92379F9A900196029 /* StateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF52F2E82379F9A900196029 /* StateCell.swift */; };
 		DF6680CD237CA02C00EBB80C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6680CC237CA02C00EBB80C /* NetworkService.swift */; };
 		DF6680D0237CA0E200EBB80C /* GetSectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6680CF237CA0E200EBB80C /* GetSectionResponse.swift */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		DF1149B5237D6B5100B4E135 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		DF247ED4237AA22400BE3E91 /* SectionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableView.swift; sourceTree = "<group>"; };
 		DF52F2E82379F9A900196029 /* StateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCell.swift; sourceTree = "<group>"; };
 		DF6680CC237CA02C00EBB80C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DF6680CF237CA0E200EBB80C /* GetSectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSectionResponse.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			children = (
 				DFA16A6F23849CEF0060F207 /* Cells */,
 				DF736D1F2383DB6F00A9502C /* Constants.swift */,
-				DF247ED4237AA22400BE3E91 /* SectionTableView.swift */,
 				DF9BBC53237FCB3B002CC293 /* FooterView.swift */,
 			);
 			path = View;
@@ -360,7 +357,6 @@
 				DFEABF69237EA74F00AB3012 /* CreatorsTableCell.swift in Sources */,
 				DF8C487023793FFB00DF3CE8 /* AppDelegate.swift in Sources */,
 				DF9BBC54237FCB3B002CC293 /* FooterView.swift in Sources */,
-				DF247ED5237AA22400BE3E91 /* SectionTableView.swift in Sources */,
 				DFEABF7E237EC04D00AB3012 /* StoriesTableCell.swift in Sources */,
 				DF8C487A23793FFB00DF3CE8 /* Marvel_Heroes.xcdatamodeld in Sources */,
 				DF8C487223793FFB00DF3CE8 /* SceneDelegate.swift in Sources */,
