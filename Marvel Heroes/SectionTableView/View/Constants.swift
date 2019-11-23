@@ -15,6 +15,9 @@ struct Constants {
     static let descLabelInsets = UIEdgeInsets(top: 5, left: 20, bottom: 15, right: 20)
     static let extraLabelInsets = UIEdgeInsets(top: 5, left: 20, bottom: 15, right: 20)
     
+    static let imageInsets = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 0)
+    static let imageSize = CGSize(width: 67, height: 100)
+    
     static let titleLabelFont = UIFont.systemFont(ofSize: 21, weight: .bold)
     static let descriptionFont = UIFont.systemFont(ofSize: 19, weight: .regular)
     static let extraLabelFont = UIFont.systemFont(ofSize: 20, weight: .medium)

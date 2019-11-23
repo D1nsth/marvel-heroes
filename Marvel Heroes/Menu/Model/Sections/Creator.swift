@@ -11,12 +11,20 @@ import Foundation
 struct Creator {
     var id: Int
     var fullName: String
+    var imageURL: String
     
     init?(dist: [String: AnyObject]) {
         guard let id = dist["id"] as? Int,
-              let fullName = dist["fullName"] as? String else { return nil }
+              let fullName = dist["fullName"] as? String,
+              let thumbnail = dist["thumbnail"] as? [String: Any] else { return nil }
         
         self.id = id
         self.fullName = fullName
+        self.imageURL = ""
+        
+        guard let path = thumbnail["path"] as? String,
+              let extensionImage = thumbnail["extension"] as? String else { return nil }
+        
+        self.imageURL = "\(path)/portrait_medium.\(extensionImage)"
     }
 }

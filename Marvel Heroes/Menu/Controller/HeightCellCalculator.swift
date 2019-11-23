@@ -51,14 +51,16 @@ final class HeightCellCalculator {
             heigth += heightExtraLabelCell(with: cell.type)
         }
         
-        return heigth
+        let imageHeigth = Constants.imageSize.height + Constants.imageInsets.top + Constants.imageInsets.bottom
+        let result = (heigth > imageHeigth) ? heigth : imageHeigth
+        return result
     }
     
     private func heightTitleLabelCell(with labelText: String) -> CGFloat {
         var height: CGFloat = Constants.titleLabelInsets.top
         
         if let text: String = labelText, !text.isEmpty {
-            let width = screenWidth - Constants.titleLabelInsets.left - Constants.titleLabelInsets.right
+            let width = screenWidth - Constants.imageInsets.left - Constants.imageSize.width - Constants.titleLabelInsets.left - Constants.titleLabelInsets.right
             let labelFont = Constants.titleLabelFont
             
             height += text.height(width: width, font: labelFont)
@@ -71,7 +73,7 @@ final class HeightCellCalculator {
         var height: CGFloat = Constants.descLabelInsets.top + Constants.descLabelInsets.bottom
         
         if let text: String = labelText, !text.isEmpty {
-            let width = screenWidth - Constants.descLabelInsets.left - Constants.descLabelInsets.right
+            let width = screenWidth - Constants.imageInsets.left - Constants.imageSize.width - Constants.descLabelInsets.left - Constants.descLabelInsets.right
             let labelFont = Constants.descriptionFont
             
             height += text.height(width: width, font: labelFont)
@@ -84,7 +86,7 @@ final class HeightCellCalculator {
         var height: CGFloat = Constants.extraLabelInsets.top + Constants.extraLabelInsets.bottom
         
         if let text: String = labelText, !text.isEmpty {
-            let width = screenWidth - Constants.descLabelInsets.left - Constants.descLabelInsets.right
+            let width = screenWidth - Constants.imageInsets.left - Constants.imageSize.width - Constants.descLabelInsets.left - Constants.descLabelInsets.right
             let labelFont = Constants.extraLabelFont
             
             height += text.height(width: width, font: labelFont)

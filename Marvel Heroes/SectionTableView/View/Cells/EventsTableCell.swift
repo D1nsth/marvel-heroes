@@ -28,11 +28,18 @@ class EventsTableCell: UITableViewCell {
         return label
     }()
     
+    let mainImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        
+        return image
+    }()
     
     // MARK: - init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        addSubview(mainImage)
         addSubview(titleLabel)
         addSubview(descriptionLabel)
     }
@@ -41,24 +48,51 @@ class EventsTableCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        mainImage.image = nil
+    }
     
     // MARK: - configure
     func configure(event: Event) {
         titleLabel.text = event.title
         descriptionLabel.text = event.description
         
+        downloadImage(from: event.imageURL)
+        
         setConstraints()
     }
     
+    private func downloadImage(from stringURL: String) {
+        guard let url = URL(string: stringURL) else { return }
+        
+        NetworkService.shared.getImage(url: url) { (data, response, error) in
+            guard let data = data, error == nil else { return }
+            
+            DispatchQueue.main.async() {
+                self.mainImage.image = UIImage(data: data)
+            }
+        }
+    }
+    
     private func setConstraints() {
+        mainImage.anchor(top: self.topAnchor,
+                         leading: self.leadingAnchor,
+                         bottom: nil,
+                         trailing: nil,
+                         padding: Constants.imageInsets)
+        mainImage.heightAnchor.constraint(equalToConstant: Constants.imageSize.height).isActive = true
+        mainImage.widthAnchor.constraint(equalToConstant: Constants.imageSize.width).isActive = true
+        
         titleLabel.anchor(top: self.topAnchor,
-                          leading: self.leadingAnchor,
+                          leading: mainImage.trailingAnchor,
                           bottom: nil,
                           trailing: self.trailingAnchor,
                           padding: Constants.titleLabelInsets)
         
         descriptionLabel.anchor(top: titleLabel.bottomAnchor,
-                                leading: self.leadingAnchor,
+                                leading: mainImage.trailingAnchor,
                                 bottom: self.bottomAnchor,
                                 trailing: self.trailingAnchor,
                                 padding: Constants.descLabelInsets)

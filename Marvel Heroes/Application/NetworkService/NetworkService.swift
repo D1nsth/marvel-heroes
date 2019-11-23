@@ -32,4 +32,8 @@ class NetworkService {
         }.resume()
     }
     
+    public func getImage(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
 }
