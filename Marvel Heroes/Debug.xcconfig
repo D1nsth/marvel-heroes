@@ -1,0 +1,14 @@
+//
+//  Debug.xcconfig
+//  Marvel Heroes
+//
+//  Created by Никита on 14.11.2019.
+//  Copyright © 2019 Nikita Ananev. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PUBLIC_KEY = 8e8dd67484cd5cf70ae52f0cf72a9b2c
+
+PRIVATE_KEY = 400dd3cea1890d5a00da20e4f66fe23ab2f2e078
