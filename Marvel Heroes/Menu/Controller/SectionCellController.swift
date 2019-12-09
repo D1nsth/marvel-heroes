@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 extension SectionCell {
     
@@ -63,16 +64,7 @@ extension SectionCell {
         
         activityIndicator.startAnimating()
         
-        // подгружаем данные с сайта
-        SectionsNetworkService.getSectionData(self.nameSection, startIndex: 0) { (response) in
-            self.dataArray = response.resultsArray as [AnyObject]
-            self.sectionTableView.reloadData()
-            self.footerView.setTitle("\(self.dataArray?.count ?? 0) записей")
-            
-            self.activityIndicator.stopAnimating()
-            self.animator.startAnimation()
-        }
-        
+        retrieveSectionData()
     }
     
     func expanded() {
@@ -102,6 +94,7 @@ extension SectionCell {
         animator.addCompletion { (position) in
             switch position {
             case .end:
+                
                 self.sectionTableView.alpha = 0
                 self.dataArray = []
                 self.sectionTableView.reloadData()
@@ -132,32 +125,32 @@ extension SectionCell: UITableViewDataSource, UITableViewDelegate {
         let identifier = "\(nameSection.getString())TableCell"
         
         switch nameSection! {
-        case .CHARACTERS:
+        case .characters:
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CharactersTableCell
             cell?.configure(character: dataArray![indexPath.row] as! Character)
             return cell!
             
-        case .COMICS:
+        case .comics:
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? ComicsTableCell
             cell?.configure(comics: dataArray![indexPath.row] as! Comics)
             return cell!
             
-        case .CREATORS:
+        case .creators:
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CreatorsTableCell
             cell?.configure(creator: dataArray![indexPath.row] as! Creator)
             return cell!
             
-        case .EVENTS:
+        case .events:
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? EventsTableCell
             cell?.configure(event: dataArray![indexPath.row] as! Event)
             return cell!
             
-        case .SERIES:
+        case .series:
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? SeriesTableCell
             cell?.configure(series: dataArray![indexPath.row] as! Series)
             return cell!
             
-        case .STORIES:
+        case .stories:
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? StoriesTableCell
             cell?.configure(story: dataArray![indexPath.row] as! Story)
             return cell!

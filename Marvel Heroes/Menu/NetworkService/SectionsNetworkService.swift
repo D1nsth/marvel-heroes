@@ -46,8 +46,8 @@ class SectionsNetworkService {
         NetworkService.shared.getData(url: url) { (json) in
             do {
                 let repsonse = try GetSectionResponse(json: json, nameSection: nameSection)
-                completion(repsonse)
                 
+                completion(repsonse)
             } catch {
                 print("Sections network service error: \(error)")
             }

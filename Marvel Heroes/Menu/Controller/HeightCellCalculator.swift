@@ -19,36 +19,36 @@ final class HeightCellCalculator {
     func totalHeightCell(with data: AnyObject, nameSection: NameSections) -> CGFloat {
         var heigth: CGFloat = 0
         switch nameSection {
-        case .CHARACTERS:
+        case .characters:
             let cell = data as! Character
             heigth = heightTitleLabelCell(with: cell.name)
-            heigth += heightDescLabelCell(with: cell.description)
+            heigth += heightDescLabelCell(with: cell.description ?? "")
             
-        case .COMICS:
+        case .comics:
             let cell = data as! Comics
             heigth = heightTitleLabelCell(with: cell.title)
-            heigth += heightDescLabelCell(with: cell.description)
+            heigth += heightDescLabelCell(with: cell.description ?? "")
             
-        case .CREATORS:
+        case .creators:
             let cell = data as! Creator
             heigth = heightTitleLabelCell(with: cell.fullName)
             
-        case .EVENTS:
+        case .events:
             let cell = data as! Event
             heigth = heightTitleLabelCell(with: cell.title)
-            heigth += heightDescLabelCell(with: cell.description)
+            heigth += heightDescLabelCell(with: cell.description ?? "")
             
-        case .SERIES:
+        case .series:
             let cell = data as! Series
             heigth = heightTitleLabelCell(with: cell.title)
-            heigth += heightDescLabelCell(with: cell.description)
-            heigth += heightExtraLabelCell(with: cell.rating)
+            heigth += heightDescLabelCell(with: cell.description ?? "")
+            heigth += heightExtraLabelCell(with: cell.rating ?? "")
             
-        case .STORIES:
+        case .stories:
             let cell = data as! Story
             heigth = heightTitleLabelCell(with: cell.title)
-            heigth += heightDescLabelCell(with: cell.description)
-            heigth += heightExtraLabelCell(with: cell.type)
+            heigth += heightDescLabelCell(with: cell.description ?? "")
+            heigth += heightExtraLabelCell(with: cell.type ?? "")
         }
         
         let imageHeigth = Constants.imageSize.height + Constants.imageInsets.top + Constants.imageInsets.bottom

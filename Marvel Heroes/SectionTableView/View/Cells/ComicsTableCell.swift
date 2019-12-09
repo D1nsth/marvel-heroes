@@ -56,6 +56,8 @@ class ComicsTableCell: UITableViewCell {
     
     // MARK: - configure
     func configure(comics: Comics) {
+        self.selectionStyle = .none
+        
         titleLabel.text = comics.title
         descriptionLabel.text = comics.description
         

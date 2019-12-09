@@ -57,6 +57,8 @@ class CharactersTableCell: UITableViewCell {
     
     // MARK: - configure
     func configure(character: Character) {
+        self.selectionStyle = .none
+        
         nameLabel.text = character.name
         descriptionLabel.text = character.description
         

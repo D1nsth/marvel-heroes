@@ -8,26 +8,50 @@
 
 import Foundation
 
-struct Comics {
+struct Comics: Codable {
     var id: Int
     var title: String
-    var description: String
+    var description: String?
     var imageURL: String
     
-    init?(dist: [String: AnyObject]) {
-        guard let id = dist["id"] as? Int,
-              let title = dist["title"] as? String,
-              let description = dist["description"] as? String,
-              let thumbnail = dist["thumbnail"] as? [String: Any] else { return nil }
-        
-        self.id = id
-        self.title = title
-        self.description = description
-        self.imageURL = ""
-        
-        guard let path = thumbnail["path"] as? String,
-              let extensionImage = thumbnail["extension"] as? String else { return nil }
-        
-        self.imageURL = "\(path)/portrait_medium.\(extensionImage)"
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case description
+        case thumbnail
     }
+    
+    enum ThumbnailCodingKeys: String, CodingKey {
+        case path
+        case extensionImage = "extension"
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(title, forKey: .title)
+        try container.encode(description, forKey: .description)
+        
+        var thumbnailContainer = container.nestedContainer(keyedBy: ThumbnailCodingKeys.self, forKey: .thumbnail)
+        try thumbnailContainer.encode(imageURL, forKey: .path)
+        try thumbnailContainer.encode("", forKey: .extensionImage)
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        title = try container.decode(String.self, forKey: .title)
+        description = try? container.decode(String.self, forKey: .description)
+        
+        let thumbnailContainer = try container.nestedContainer(keyedBy: ThumbnailCodingKeys.self, forKey: .thumbnail)
+        let path = try thumbnailContainer.decode(String.self, forKey: .path)
+        let extensionImage = try thumbnailContainer.decode(String.self, forKey: .extensionImage)
+        
+        if (extensionImage != "") {
+            imageURL = "\(path)/portrait_medium.\(extensionImage)"
+        } else {
+            imageURL = path
+        }
+    }
+    
 }

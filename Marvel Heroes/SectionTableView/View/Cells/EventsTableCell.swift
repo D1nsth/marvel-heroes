@@ -56,6 +56,8 @@ class EventsTableCell: UITableViewCell {
     
     // MARK: - configure
     func configure(event: Event) {
+        self.selectionStyle = .none
+        
         titleLabel.text = event.title
         descriptionLabel.text = event.description
         

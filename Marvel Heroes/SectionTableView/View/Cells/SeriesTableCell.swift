@@ -66,9 +66,11 @@ class SeriesTableCell: UITableViewCell {
     
     // MARK: - configure
     func configure(series: Series) {
+        self.selectionStyle = .none
+        
         titleLabel.text = series.title
         descriptionLabel.text = series.description
-        ratingLabel.text = "Rating: \(series.rating)"
+        ratingLabel.text = (series.rating != "") ? "Rating: \(series.rating!)" : ""
         
         downloadImage(from: series.imageURL)
         

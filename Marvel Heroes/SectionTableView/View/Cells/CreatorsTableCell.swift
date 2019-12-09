@@ -46,6 +46,8 @@ class CreatorsTableCell: UITableViewCell {
     
     // MARK: - configure
     func configure(creator: Creator) {
+        self.selectionStyle = .none
+        
         fullNameLabel.text = creator.fullName
         
         downloadImage(from: creator.imageURL)

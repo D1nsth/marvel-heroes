@@ -9,12 +9,12 @@
 import Foundation
 
 enum NameSections: String {
-    case CHARACTERS = "Characters"
-    case COMICS = "Comics"
-    case CREATORS = "Creators"
-    case EVENTS = "Events"
-    case SERIES = "Series"
-    case STORIES = "Stories"
+    case characters = "Characters"
+    case comics = "Comics"
+    case creators = "Creators"
+    case events = "Events"
+    case series = "Series"
+    case stories = "Stories"
     
     func getString() -> String {
         return self.rawValue
@@ -22,16 +22,16 @@ enum NameSections: String {
     
     static func getEnum(byString section: String) -> NameSections {
         switch section {
-        case "Characters":  return .CHARACTERS
-        case "Comics":      return .COMICS
-        case "Creators":    return .CREATORS
-        case "Events":      return .EVENTS
-        case "Series":      return .SERIES
-        case "Stories":     return .STORIES
+        case "Characters":  return .characters
+        case "Comics":      return .comics
+        case "Creators":    return .creators
+        case "Events":      return .events
+        case "Series":      return .series
+        case "Stories":     return .stories
             
         default:
             print("Error get enum NameSections")
-            return .CHARACTERS
+            return .characters
         }
     }
 }

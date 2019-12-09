@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 class SectionCell: UICollectionViewCell {
+    var context: NSManagedObjectContext!
     var dataArray: [AnyObject]?
     
     static let reuseId = "SectionCell"
@@ -47,6 +49,8 @@ class SectionCell: UICollectionViewCell {
     // MARK: - Setup configures
     
     func configure(section: Section, collectionView: UICollectionView, index: Int) {
+        context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        
         dataArray = []
         nameSection = NameSections.getEnum(byString: section.nameSection)
         
@@ -81,17 +85,17 @@ class SectionCell: UICollectionViewCell {
         var usedClass: AnyClass
         
         switch nameSection! {
-        case .CHARACTERS:
+        case .characters:
             usedClass = CharactersTableCell.self
-        case .COMICS:
+        case .comics:
             usedClass = ComicsTableCell.self
-        case .CREATORS:
+        case .creators:
             usedClass = CreatorsTableCell.self
-        case .EVENTS:
+        case .events:
             usedClass = EventsTableCell.self
-        case .SERIES:
+        case .series:
             usedClass = SeriesTableCell.self
-        case .STORIES:
+        case .stories:
             usedClass = StoriesTableCell.self
         }
         

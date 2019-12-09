@@ -66,11 +66,17 @@ class StoriesTableCell: UITableViewCell {
     
     // MARK: - configure
     func configure(story: Story) {
+        self.selectionStyle = .none
+        
         titleLabel.text = story.title
         descriptionLabel.text = story.description
-        typeLabel.text = "Type: \(story.type)"
+        typeLabel.text = (story.type != "") ? "Type: \(story.type!)" : ""
         
-        downloadImage(from: story.imageURL)
+        if (story.imageURL != "") {
+            downloadImage(from: story.imageURL!)
+        } else {
+            mainImage.image = UIImage(named: "imageNotAvailable")
+        }
         
         setConstraints()
     }

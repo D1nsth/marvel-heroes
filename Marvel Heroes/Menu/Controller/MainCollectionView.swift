@@ -7,23 +7,55 @@
 //
 
 import UIKit
+import CoreData
 
 class MainCollectionView: UIViewController {
     
     private var collectionView: UICollectionView!
     
     // разделы в меню
-    private let data: [Section] = [Section(.CHARACTERS, mainImageName: "\(NameSections.CHARACTERS.getString()).png"),
-                           Section(.COMICS, mainImageName: "\(NameSections.COMICS.getString()).png"),
-                           Section(.CREATORS, mainImageName: "\(NameSections.CREATORS.getString()).png"),
-                           Section(.EVENTS, mainImageName: "\(NameSections.EVENTS.getString())"),
-                           Section(.SERIES, mainImageName: "\(NameSections.SERIES.getString()).png"),
-                           Section(.STORIES, mainImageName: "\(NameSections.STORIES.getString()).png")]
+    private let data: [Section] = [Section(.characters, mainImageName: "\(NameSections.characters.getString()).png"),
+                           Section(.comics, mainImageName: "\(NameSections.comics.getString()).png"),
+                           Section(.creators, mainImageName: "\(NameSections.creators.getString()).png"),
+                           Section(.events, mainImageName: "\(NameSections.events.getString())"),
+                           Section(.series, mainImageName: "\(NameSections.series.getString()).png"),
+                           Section(.stories, mainImageName: "\(NameSections.stories.getString()).png")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createSectionData()
+        
         setupCollectionView()
+    }
+    
+    // создасние данных в coreData
+    func createSectionData() {
+        let context = ((UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext)!
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SectionEntity")
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            
+            if (result.count == 0) {
+                
+                let sectionEntity = NSEntityDescription.entity(forEntityName: "SectionEntity", in: context)!
+                let sectionData = NSManagedObject(entity: sectionEntity, insertInto: context)
+                
+                sectionData.setValue("", forKey: AttributesSectionEntity.characterJsonString.getString())
+                sectionData.setValue("", forKey: AttributesSectionEntity.comicsJsonString.getString())
+                sectionData.setValue("", forKey: AttributesSectionEntity.creatorJsonString.getString())
+                sectionData.setValue("", forKey: AttributesSectionEntity.eventJsonString.getString())
+                sectionData.setValue("", forKey: AttributesSectionEntity.seriesJsonString.getString())
+                sectionData.setValue("", forKey: AttributesSectionEntity.storyJsonString.getString())
+                
+                try context.save()
+            }
+            
+        } catch let error as NSError {
+            print("\(error), \(error.userInfo)")
+        }
+        
     }
     
     func setupCollectionView() {
